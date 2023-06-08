@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { userRouter } from './router/userRouter'
@@ -15,3 +15,8 @@ app.listen(process.env.PORT || 3003, () => {
 })
 
 app.use("/users", userRouter)
+
+app.get("/ping", (req:Request,res:Response)=>{
+    res.send("tamo funfando")
+})
+
